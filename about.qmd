@@ -1,0 +1,23 @@
+---
+title: "About"
+description: |
+  The Pentatonic Woodwinds -- a flute, an oboe and three clarinets -- formed in September 2024 to share woodwind music in the Chinese community and promote Chinese music and culture across the Omaha metro area.
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+The Pentatonic Woodwinds was formed in September 2024 with two missions: to share an appreciation for woodwinds in the Chinese community and to promote Chinese music and culture in the Omaha Metro area. This quintet, consisting of a flute, an oboe, and three clarinets, is dedicated to both arrangements of traditional Chinese music and modern compositions inspired by Chinese culture.
+
+五木头（Pentatonic Woodwinds）成立于2024年9月，是一支木管五重奏，致力于在华人社区推广木管音乐艺术，并在奥马哈都会区传播中华音乐与文化。乐团由一支长笛、一支双簧管和三支单簧管组成，以精心编排的中国传统音乐改编作品和富有中华文化特色的现代作品为特色，展现木管音乐丰富多彩的艺术魅力。
+
+### Current Members
+
+- Flute: Lily Zhu\*
+- Oboe: James Zhu\*
+- Clarinet: Lucy Zhu\*, Yvonne Luo
+- Bass Clarinet: Zijun Luo\*
+
+*Former members: Roger Zhang\* (clarinet, 2024--25).*
+
+\* Founding member

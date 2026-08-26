@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - about.qmd
+    - member.qmd
+    - pastperf.qmd
+    - contract2026.md
+    - rehearsal2026.md
+  post-render: python3 prune_sitemap.py
+  
+website:
+  page-navigation: true
+  title: "Pentatonic Woodwinds"
+  site-url: https://www.luozijun.com/pentatonicwoodwinds
+  description: |
+    The Pentatonic Woodwinds is a woodwind quintet based in the Omaha metro area, performing arrangements of traditional Chinese music and modern works inspired by Chinese culture.
+  open-graph: true
+  # repo-actions: [edit, issue]
+  
+  page-footer:
+    left: |
+      © 2025-2026 [Pentatonic Woodwinds](https://www.luozijun.com/pentatonicwoodwinds)<br>
+    right: |
+      Made with [Quarto](https://quarto.org/)<br>
+    
+  navbar: 
+    background: "#A9CCE3"
+    search: true
+    left: 
+      - text: "Home"
+        href: index.qmd
+      - text: "Past Performances"
+        href: pastperf.qmd
+      - text: "Members Only"
+        href: member.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Omaha Hulusi Ensemble"
+        href: https://www.luozijun.com/omahahulusi/
+
+format:
+  html:
+    theme: styles.scss
+    toc: false            # 启用目录
+    toc-position: right  # 将目录放置在页面的右侧
+    toc-depth: 3         # 设置目录的深度，数字越大，目录越详细

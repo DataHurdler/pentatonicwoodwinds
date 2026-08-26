@@ -1,0 +1,36 @@
+---
+title: "Past Performances"
+description: |
+  Concerts, community performances and cultural exchange events by the Pentatonic Woodwinds in the Omaha metro area.
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+### NCA Lunar New Year's Gala (February 22, 2025)
+- 彩云追月 (Colorful Clouds Chasing the Moon) [YouTube](https://youtu.be/NjZ4cygeD8I)
+
+### NCA Chinese Music Concert (May 10, 2025)
+- Chinese Dragon Parade (composed by David Marlatt)
+- 人间烟火 (Simple Beauty of Life)
+- 儿歌串烧：小毛驴/数鸭子/上学歌/一分钱 (Chinese Nursery Medley)
+- 望春风 (Longing for the Spring Breeze), featuring Yvonne Luo on clarinet
+- 月光下的凤尾竹 (Fernleaf Bamboo Hedge in the Moonlight)
+- 紫竹调 (Purple Bamboo Melody)
+- 花好月圆 (Blooming Flowers and the Full Moon)
+
+### Nebraska State Fair (August 23, 2025)
+- 喜洋洋 (Full of Joy)
+- 彩云追月 (Colorful Clouds Chasing the Moon)
+- 紫竹调 (Purple Bamboo Melody)
+- 望春风 (Longing for the Spring Breeze), featuring Yvonne Luo on clarinet
+- 恭喜恭喜 (Gongxi Gongxi)
+- 儿歌串烧：小毛驴/数鸭子/上学歌/一分钱 (Chinese Nursery Medley)
+- 人间烟火 (Simple Beauty of Life)
+- 花好月圆 (Blooming Flowers and the Full Moon)
+
+### One Community Cultural Festrival (September 13, 2025)
+- The Entertainer
+- 彩云追月 (Colorful Clouds Chasing the Moon)
+- 喜洋洋 (Full of Joy)
+- 花好月圆 (Blooming Flowers and the Full Moon)

@@ -1,0 +1,12 @@
+---
+format:
+  html:
+    include-in-header:
+      text: |
+        <meta name="robots" content="noindex, nofollow">
+---
+
+## Members Resources
+
+- [2026 Ensemble Agreement](contract2026.html)
+- [2026 Rehearsal Framework](rehearsal2026.html)

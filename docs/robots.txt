@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Internal ensemble documents carry <meta name="robots" content="noindex">.
+# They are deliberately NOT disallowed here: a blocked page is never fetched,
+# so the noindex would never be seen and the URL could still be indexed.
+
+Sitemap: https://www.luozijun.com/pentatonicwoodwinds/sitemap.xml
