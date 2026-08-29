@@ -30,7 +30,7 @@ website:
         href: index.qmd
       - text: "Performances"
         href: performances.qmd
-      - text: "Members Only"
+      - text: "Member Resources"
         href: member.qmd
       - text: "About"
         href: about.qmd
