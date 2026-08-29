@@ -1,7 +1,5 @@
 ---
 title: "Pentatonic Woodwinds"
-description: |
-  The Pentatonic Woodwinds is a woodwind quintet based in the Omaha metro area, performing arrangements of traditional Chinese music and modern works inspired by Chinese culture.
 image: images/gala2025.jpeg
 about:
   id: hero-heading
