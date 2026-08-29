@@ -5,7 +5,7 @@ project:
     - index.qmd
     - about.qmd
     - member.qmd
-    - pastperf.qmd
+    - performances.qmd
     - contract2026.md
     - rehearsal2026.md
   post-render: python3 prune_sitemap.py
@@ -31,8 +31,8 @@ website:
     left: 
       - text: "Home"
         href: index.qmd
-      - text: "Past Performances"
-        href: pastperf.qmd
+      - text: "Performances"
+        href: performances.qmd
       - text: "Members Only"
         href: member.qmd
       - text: "About"
