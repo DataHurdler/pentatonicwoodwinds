@@ -14,9 +14,6 @@ website:
   page-navigation: true
   title: "Pentatonic Woodwinds"
   site-url: https://www.luozijun.com/pentatonicwoodwinds
-  description: |
-    The Pentatonic Woodwinds is a woodwind quintet based in the Omaha metro area, performing arrangements of traditional Chinese music and modern works inspired by Chinese culture.
-  open-graph: true
   # repo-actions: [edit, issue]
   
   page-footer:
