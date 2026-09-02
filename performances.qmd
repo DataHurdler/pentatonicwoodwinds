@@ -29,7 +29,7 @@ editor:
 - 人间烟火 (Simple Beauty of Life)
 - 花好月圆 (Blooming Flowers and the Full Moon)
 
-### One Community Cultural Festrival (Leahy Mall at The RiverFront, September 13, 2025)
+### One Community Cultural Festival (Gene Leahy Mall at The RiverFront, September 13, 2025)
 - The Entertainer
 - 彩云追月 (Colorful Clouds Chasing the Moon)
 - 喜洋洋 (Full of Joy)
@@ -39,5 +39,5 @@ editor:
 - 花好月圆 (Blooming Flowers and the Full Moon)
 - 春不晚 (Spring Still Comes)
 
-### One Community Cultural Festrival (Leahy Mall at The RiverFront, September 19, 2026)
+### One Community Cultural Festival (Gene Leahy Mall at The RiverFront, September 19, 2026)
 - 赛马 (Horse Racing)
