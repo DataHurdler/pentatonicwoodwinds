@@ -14,6 +14,10 @@ website:
   page-navigation: true
   title: "Pentatonic Woodwinds"
   site-url: https://www.luozijun.com/pentatonicwoodwinds
+  description: "A Chinese woodwind quintet in the Omaha metro area: a flute, an oboe and three clarinets performing traditional and contemporary Chinese music."
+  image: images/gala2025.jpeg
+  open-graph: true
+  twitter-card: true
   # repo-actions: [edit, issue]
   
   page-footer:

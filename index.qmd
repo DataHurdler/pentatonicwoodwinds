@@ -1,5 +1,14 @@
 ---
 title: "Pentatonic Woodwinds"
+format:
+  html:
+    include-in-header:
+      # Set as raw meta tags rather than a front-matter `description:`, which
+      # Quarto would also render as a visible subtitle on the About template.
+      text: |
+        <meta name="description" content="A Chinese woodwind quintet in the Omaha metro area: a flute, an oboe and three clarinets performing traditional and contemporary Chinese music.">
+        <meta property="og:description" content="A Chinese woodwind quintet in the Omaha metro area: a flute, an oboe and three clarinets performing traditional and contemporary Chinese music.">
+        <meta name="twitter:description" content="A Chinese woodwind quintet in the Omaha metro area: a flute, an oboe and three clarinets performing traditional and contemporary Chinese music.">
 image: images/gala2025.jpeg
 about:
   id: hero-heading
