@@ -148,3 +148,71 @@ h4 {
   background-size: 1em;
   background-position: 1em 0.5em;
 }
+
+/* 中英文切换 —— 由 _includes/lang-head.html 设置 html[data-lang]。
+   未启用 JavaScript 时两种语言同时显示。 */
+html[data-lang="en"] .lang-zh,
+html[data-lang="zh"] .lang-en {
+  display: none !important;
+}
+
+/* Quarto gives #navbarCollapse flex-grow:1 and puts .me-auto on the main nav
+   list. A second list with .ms-auto would split the slack between the two auto
+   margins and leave the toggle floating mid-navbar, so drop the left list's
+   auto margin and hand all of it to the toggle instead. */
+.navbar .navbar-collapse .navbar-nav.me-auto {
+  margin-right: 0 !important;
+}
+
+#lang-switch-nav {
+  margin-left: auto;
+}
+
+#lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.2rem 0.85rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: $theme-darkgreen1 !important;
+  cursor: pointer;
+}
+
+#lang-switch:hover,
+#lang-switch:focus-visible {
+  background: #fff;
+  color: darken($theme-darkgreen1, 8%) !important;
+}
+
+#lang-switch .bi {
+  font-size: 1.05em;
+}
+
+/* Below the lg breakpoint the navbar collapses to a column, where an auto left
+   margin would shove the pill against the right edge. */
+@media (max-width: 991.98px) {
+  #lang-switch-nav {
+    margin-left: 0;
+  }
+
+  #lang-switch {
+    margin: 0.4rem 0;
+  }
+}
+
+/* Quarto paints .about-link with $link-color, and that red reads oddly under
+   the title. Use the title's own colour, darkened enough to read:
+   $headings-color itself is only 2.92:1 on white. Quarto's `border: solid 1px`
+   leaves border-color as currentColor, so the outline follows the text colour
+   on its own; the hover state has to name it because it fills the button. */
+#lang-switch-hero {
+  color: darken($headings-color, 13%);
+}
+
+#lang-switch-hero:hover,
+#lang-switch-hero:focus-visible {
+  color: $theme-white;
+  background: darken($headings-color, 13%);
+  border-color: darken($headings-color, 13%);
+}

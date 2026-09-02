@@ -1,0 +1,181 @@
+<script>
+  // Site chrome that Quarto generates outside the .qmd sources: navbar labels,
+  // page titles, descriptions and the footer. Page *content* is switched by the
+  // .lang-en / .lang-zh rules in styles.scss instead.
+  (function () {
+    var STORAGE_KEY = "site-lang";
+
+    var ZH = {
+      "Pentatonic Woodwinds": "五木头",
+      "Home": "首页",
+      "Performances": "演出",
+      "Member Resources": "团员资源",
+      "About": "关于",
+      "Omaha Hulusi Ensemble": "奥马哈葫芦丝合奏团",
+      "The Pentatonic Woodwinds – a flute, an oboe and three clarinets – formed in September 2024 to share woodwind music in the Chinese community and promote Chinese music and culture across the Omaha metro area.":
+        "五木头由一支长笛、一支双簧管和三支单簧管组成，成立于2024年9月，致力于在华人社区推广木管音乐，并在奥马哈都会区传播中华音乐与文化。",
+      "Concerts, community performances and cultural exchange events by the Pentatonic Woodwinds in the Omaha metro area.":
+        "五木头在奥马哈都会区的音乐会、社区演出与文化交流活动。",
+      "Made with": "制作工具",
+      "Search": "搜索"
+    };
+
+    // [button id, label id] for each language switch on the page.
+    var SWITCHES = [
+      ["lang-switch", "lang-switch-label"],
+      ["lang-switch-hero", "lang-switch-hero-label"]
+    ];
+
+    // Elements whose text is swapped wholesale. Each entry is remembered with its
+    // original English text so switching back is lossless.
+    var SELECTORS = [
+      ".navbar-title",
+      ".navbar-nav .menu-text",
+      "h1.title",
+      "#title-block-header .description p",
+      ".nav-footer a",
+      "#quarto-search"
+    ];
+
+    function collect() {
+      var out = [];
+      SELECTORS.forEach(function (sel) {
+        Array.prototype.forEach.call(document.querySelectorAll(sel), function (el) {
+          var en = el.getAttribute("data-en");
+          if (en === null) {
+            en = el.id === "quarto-search" ? el.getAttribute("title") : el.textContent.trim();
+            if (!en || !ZH[en]) return;
+            el.setAttribute("data-en", en);
+          }
+          out.push(el);
+        });
+      });
+      return out;
+    }
+
+    function apply(lang) {
+      var zh = lang === "zh";
+      collect().forEach(function (el) {
+        var en = el.getAttribute("data-en");
+        var text = zh ? ZH[en] : en;
+        if (el.id === "quarto-search") {
+          el.setAttribute("title", text);
+          var input = el.querySelector("input");
+          if (input) input.setAttribute("placeholder", text);
+        } else {
+          el.textContent = text;
+        }
+      });
+
+      // "Made with Quarto" keeps the Quarto link, so only its lead-in moves.
+      var madeWith = document.querySelector(".nav-footer-right p");
+      if (madeWith && madeWith.firstChild && madeWith.firstChild.nodeType === 3) {
+        madeWith.firstChild.nodeValue = zh ? "制作工具：" : "Made with ";
+      }
+
+      var titled = document.querySelector("h1.title");
+      if (titled) {
+        var suffix = zh ? " – 五木头" : " – Pentatonic Woodwinds";
+        document.title = titled.textContent === (zh ? ZH["Pentatonic Woodwinds"] : "Pentatonic Woodwinds")
+          ? titled.textContent
+          : titled.textContent + suffix;
+      }
+
+      document.documentElement.setAttribute("data-lang", lang);
+      document.documentElement.setAttribute("lang", zh ? "zh-Hans" : "en");
+
+      // Phrase the label as an instruction, written in the language it
+      // switches *to*: a Chinese speaker landing on the English page sees
+      // Chinese text, which is what draws the eye, and vice versa.
+      var instruction = zh ? "Switch to English" : "切换到中文";
+      SWITCHES.forEach(function (ids) {
+        var button = document.getElementById(ids[0]);
+        var label = document.getElementById(ids[1]);
+        if (!button || !label) return;
+        label.textContent = instruction;
+        label.setAttribute("lang", zh ? "en" : "zh-Hans");
+        button.setAttribute("aria-label", instruction);
+      });
+    }
+
+    function toggle(event) {
+      event.preventDefault();
+      var next = document.documentElement.getAttribute("data-lang") === "zh" ? "en" : "zh";
+      try { window.localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+      apply(next);
+    }
+
+    function mountNavbar() {
+      var collapse = document.getElementById("navbarCollapse");
+      if (!collapse || document.getElementById("lang-switch")) return;
+
+      var list = document.createElement("ul");
+      list.className = "navbar-nav navbar-nav-scroll";
+      list.id = "lang-switch-nav";
+      list.innerHTML =
+        '<li class="nav-item">' +
+        '<a class="nav-link" href="#" id="lang-switch" role="button">' +
+        '<i class="bi bi-translate" aria-hidden="true"></i>' +
+        '<span id="lang-switch-label"></span>' +
+        "</a></li>";
+      collapse.appendChild(list);
+      document.getElementById("lang-switch").addEventListener("click", toggle);
+    }
+
+    // A second switch under the title on the About-template home page, built to
+    // match Quarto's own about-link markup. Injected rather than declared as an
+    // `about: links:` entry because Quarto rewrites those hrefs to be
+    // site-root-relative ("/index.html#lang"), which points off this site to
+    // luozijun.com. Injecting also means no switch appears when scripting is
+    // off, which is right: both languages are already visible then.
+    function mountHero() {
+      var entity = document.querySelector(".quarto-about-trestles .about-entity");
+      if (!entity || document.getElementById("lang-switch-hero")) return;
+
+      var header = entity.querySelector("#title-block-header");
+      if (!header) return;
+
+      var links = entity.querySelector(".about-links");
+      if (!links) {
+        links = document.createElement("div");
+        links.className = "about-links";
+        header.insertAdjacentElement("afterend", links);
+      }
+
+      var link = document.createElement("a");
+      link.className = "about-link";
+      link.id = "lang-switch-hero";
+      link.href = "#";
+      link.setAttribute("role", "button");
+      link.innerHTML =
+        '<i class="bi bi-translate" aria-hidden="true"></i>' +
+        '<span class="about-link-text" id="lang-switch-hero-label"></span>';
+      links.appendChild(link);
+      link.addEventListener("click", toggle);
+    }
+
+    function init() {
+      mountNavbar();
+      mountHero();
+      apply(document.documentElement.getAttribute("data-lang") || "en");
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+
+    // Quarto builds the search input asynchronously, so watch for it rather
+    // than depend on script order.
+    var search = document.getElementById("quarto-search");
+    if (search && window.MutationObserver) {
+      new MutationObserver(function () {
+        var input = search.querySelector("input");
+        if (!input) return;
+        var zh = document.documentElement.getAttribute("data-lang") === "zh";
+        input.setAttribute("placeholder", zh ? ZH["Search"] : "Search");
+      }).observe(search, { childList: true, subtree: true });
+    }
+  })();
+</script>

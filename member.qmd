@@ -1,4 +1,5 @@
 ---
+title: "Member Resources"
 format:
   html:
     include-in-header:
@@ -6,7 +7,5 @@ format:
         <meta name="robots" content="noindex, nofollow">
 ---
 
-## Member Resources
-
-- [2026 Ensemble Agreement](contract2026.html)
-- [2026 Rehearsal Framework](rehearsal2026.html)
+- [[2026 Ensemble Agreement]{.lang-en}[2026年乐团协议]{.lang-zh}](contract2026.html)
+- [[2026 Rehearsal Framework]{.lang-en}[2026年排练安排]{.lang-zh}](rehearsal2026.html)

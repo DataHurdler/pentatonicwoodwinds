@@ -1,0 +1,13 @@
+<script>
+  // Set the language before first paint so the hidden half never flashes.
+  // With JavaScript off no data-lang is set, the .lang-* rules never match,
+  // and both languages stay visible.
+  (function () {
+    var stored = null;
+    try { stored = window.localStorage.getItem("site-lang"); } catch (e) {}
+    var lang = (stored === "zh" || stored === "en") ? stored
+      : (navigator.language || "").toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+    document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.setAttribute("lang", lang === "zh" ? "zh-Hans" : "en");
+  })();
+</script>

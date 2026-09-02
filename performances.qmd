@@ -7,6 +7,7 @@ editor:
     wrap: 72
 ---
 
+::: {.lang-en}
 ### NCA Lunar New Year's Gala (Orpheum Theater, Omaha, February 22, 2025)
 - 彩云追月 (Colorful Clouds Chasing the Moon) [YouTube](https://youtu.be/NjZ4cygeD8I)
 
@@ -41,3 +42,41 @@ editor:
 
 ### One Community Cultural Festival (Gene Leahy Mall at The RiverFront, September 19, 2026)
 - 赛马 (Horse Racing)
+:::
+
+::: {.lang-zh}
+### NCA Lunar New Year's Gala 春节联欢晚会（Orpheum Theater，奥马哈，2025年2月22日）
+- 彩云追月 [YouTube](https://youtu.be/NjZ4cygeD8I)
+
+### NCA Chinese Music Concert 中国音乐会（圣玛丽学院 College of Saint Mary，2025年5月10日）
+- Chinese Dragon Parade（David Marlatt 作曲）
+- 人间烟火
+- 儿歌串烧：小毛驴/数鸭子/上学歌/一分钱
+- 望春风，单簧管：罗思悦
+- 月光下的凤尾竹
+- 紫竹调
+- 花好月圆
+
+### Nebraska State Fair 内布拉斯加州博览会（2025年8月23日）
+- 喜洋洋
+- 彩云追月
+- 紫竹调
+- 望春风，单簧管：罗思悦
+- 恭喜恭喜
+- 儿歌串烧：小毛驴/数鸭子/上学歌/一分钱
+- 人间烟火
+- 花好月圆
+
+### One Community Cultural Festival 文化节（Gene Leahy Mall at The RiverFront，2025年9月13日）
+- The Entertainer
+- 彩云追月
+- 喜洋洋
+- 花好月圆
+
+### @ Remington Heights Retirement Community（2026年5月4日）
+- 花好月圆
+- 春不晚
+
+### One Community Cultural Festival 文化节（Gene Leahy Mall at The RiverFront，2026年9月19日）
+- 赛马
+:::
