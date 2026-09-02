@@ -216,3 +216,28 @@ html[data-lang="zh"] .lang-en {
   background: darken($headings-color, 13%);
   border-color: darken($headings-color, 13%);
 }
+
+/* The home page introduction shows in BOTH languages: it is the front door, and
+   a visitor should see their own language without having to find the switch
+   first. The toggle still does something here -- it moves the selected language
+   to the top. Flex is only for `order`; the gap and the margin reset keep the
+   spacing identical to normal flow, which flex would otherwise stop collapsing. */
+#hero-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#hero-heading > div > p:last-child {
+  margin-bottom: 0;
+}
+
+#hero-heading .lang-en,
+#hero-heading .lang-zh {
+  display: block !important;
+}
+
+html[data-lang="en"] #hero-heading .lang-en,
+html[data-lang="zh"] #hero-heading .lang-zh {
+  order: -1;
+}
